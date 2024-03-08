@@ -74,3 +74,22 @@ ul {
     padding: 2px;
 
 }
+
+/*seconda pagina*/
+
+.backroudColor2{
+    background-color: rgb(218, 216, 209);
+    min-height: 900px;
+}
+
+.myContainer2{
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgb(231, 229, 227);
+    min-height: 500px;
+}
+
+.divC{
+    text-align: center;
+    
+}

@@ -6,14 +6,11 @@ va applicato uno sconto del 40% per gli over 65.
 Stampate il prezzo finale del biglietto nella console del browser in forma “umana” ovvero con massimo due cifre decimali, per indicare centesimi 
 sul prezzo (per questo sarà necessario cercare in documentazione come fare) */
 
-
-/*const kmClient = document.getElementById("km").value;
-const clientAge = document.getElementById("clientAge").value;
-const costToKm = 0.21;*/
-
-const kmClient= 202.5;
+let kmClient = "";
+let clientAge = "";
 const costToKm = 0.21;
-const clientAge = 20;
+
+
 
 /*calcolare il prezzo totale del viaggio, secondo queste regole:
 il prezzo del biglietto è definito in base ai km (0.21 € al km)*/
@@ -23,7 +20,7 @@ function cacololatePrice(km, priceToKm) {
     return TotalPrice;
 };
 
-let priceE = cacololatePrice(kmClient, costToKm);
+
 
 
 function calcolaSconto(price, age) {
@@ -41,18 +38,25 @@ function calcolaSconto(price, age) {
     }
 };
 
-let scontoE = calcolaSconto(priceE, clientAge);
-
 
 function insertIntoHTML(endPrice) {
     let div = document.getElementById("divC");
-    div.innerHTML = `<p> ${endPrice}€</p>`;
+    div.value = `<p> ${endPrice}€</p>`;
 };
 
+let button = document.getElementById("btn");
 
-window.addEventListener("DOMContentLoaded", (e) => {
+button.addEventListener("click", (e) => {
+    kmClient = document.getElementById("textKm").value;
+    clientAge = document.getElementById("ageInput").value;
 
-    insertIntoHTML(scontoE);
+    if (kmClient == "" && clientAge == "") {
+        alert("non hai inserito nessun dato")
+    } else {
+        let priceE = cacololatePrice(kmClient, costToKm);
+        let fine = calcolaSconto(priceE, clientAge);
+        insertIntoHTML(fine)
+    }
 
 });
 

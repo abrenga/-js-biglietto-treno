@@ -52,7 +52,7 @@
         <div class="colorB">
 
             <div class="container">
-                <form method="GET" class="row justify-content-evenly align-items-center colorform">
+                <form method="GET" name="bohProvo" class="row justify-content-evenly align-items-center colorform">
                     <div class="col-12 col-lg-6">
                         <label for="textKm" class="form-label">Inserisci Km</label>
                         <input type="text" class="form-control" id="textKm">
@@ -62,10 +62,11 @@
                         <input type="text" class="form-control" id="ageInput">
                     </div>
                     <div class="d-flex align-items-center justify-content-center ">
-                        <button type="submit" class="btn btn-danger myButton">Cerca</button>
+                        <button id="btn" type="submit"  class="btn btn-danger myButton">Cerca</button>
                     </div>
                 </form>
             </div>
+            <div id="divC"></div>
         </div>
         <!--mainSection Carousel-->
         <div id="carouselExample" class="d-none d-lg-block carousel slide containerMy mt-2">
@@ -92,6 +93,7 @@
         </div>
         <!--mainSection CardInfo copiate dal sito originale per provare e velocizzare-->
         <div class="container p-2 ">
+            
             <div class="row justify-content-between">
                 <div class="col-6 col-lg-3">
                     <a href="https://www.italotreno.it/it/destinazioni-orari/treni-miro#network">
