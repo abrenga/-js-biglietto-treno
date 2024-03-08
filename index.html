@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietti Treno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/stile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+
+<body>
+    <!--header Section Contiene la barra di Navigazione-->
+    <header class="mynav">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="logo" src="./img/logo.svg" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Assistenza</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Contanti</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--mainSection Form-->
+    <main class="mainSection">
+
+        <div class="colorB">
+
+            <div class="container">
+                <form method="GET" class="row justify-content-evenly align-items-center colorform">
+                    <div class="col-12 col-lg-6">
+                        <label for="textKm" class="form-label">Inserisci Km</label>
+                        <input type="text" class="form-control" id="textKm">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <label for="ageInput" class="form-label">Età</label>
+                        <input type="text" class="form-control" id="ageInput">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center ">
+                        <button type="submit" class="btn btn-danger myButton">Cerca</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--mainSection Carousel-->
+        <div id="carouselExample" class="d-none d-lg-block carousel slide containerMy mt-2">
+            <div class="carousel-inner">
+                <div class="carousel-item active imgCarosel">
+                    <img src="./img/Codici-Sconto-Italo-Treno-LANA.jpg" class="imG" alt="...">
+                </div>
+                <div class="carousel-item imgCarosel ">
+                    <img src="./img/italo-treno-soddisfa-la-tua-sete-di-viaggi-con-il-nuovo-codice-sconto-fino-al-40-sui-biglietti.jpg"
+                        class="imG" alt="...">
+                </div>
+                <div class="carousel-item imgCarosel">
+                    <img src="./img/italo_4.jpg" class=" imG" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!--mainSection CardInfo copiate dal sito originale per provare e velocizzare-->
+        <div class="container p-2 ">
+            <div class="row justify-content-between">
+                <div class="col-6 col-lg-3">
+                    <a href="https://www.italotreno.it/it/destinazioni-orari/treni-miro#network">
+                        <picture class="card__cover">
+                            <source media="(max-width: 767px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/orari_e_frequenze_asterisco_desktop_v2.png">
+                            <source media="(max-width: 1023px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/orari_e_frequenze_asterisco_desktop_v2.png">
+                            <img alt="orari_e_frequenze_asterisco_desktop_v2"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/orari_e_frequenze_asterisco_desktop_v2.png"
+                                src="..">
+                        </picture>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="https://www.italotreno.it/it/destinazioni-orari/treni-miro#lounge">
+                        <picture class="card__cover">
+                            <source media="(max-width: 767px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/servizi_in_stazione_4.png">
+                            <source media="(max-width: 1023px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/servizi_in_stazione_4.png">
+                            <img src=".." alt="servizi_in_stazione_4" loading="lazy"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/servizi_in_stazione_4.png">
+                        </picture>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="https://www.italotreno.it/it/destinazioni-orari/treni-miro#bordo">
+                        <picture class="card__cover">
+                            <source media="(max-width: 767px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/02-24/prima-business/icone_miro_colazioneabordo_ita.png">
+                            <source media="(max-width: 1023px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/02-24/prima-business/icone_miro_colazioneabordo_ita.png">
+                            <img src=".." alt="icone_miro_colazioneabordo_ita"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/02-24/prima-business/icone_miro_colazioneabordo_ita.png">
+                        </picture>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="https://www.italotreno.it/it/destinazioni-orari/treni-miro#bordo">
+                        <picture class="card__cover">
+                            <source media="(max-width: 767px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/02-24/prima-business/icone_miro_aperitivoabordo_ita_.png">
+                            <source media="(max-width: 1023px)"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/02-24/prima-business/icone_miro_aperitivoabordo_ita_.png">
+                            <img src=".." alt="icone_miro_aperitivoabordo_ita_"
+                                srcset="https://www.italotreno.it/-/media/Images/images_responsive/destinazioni-orari/landing/landing-mi-rm/icone/desktop/02-24/prima-business/icone_miro_aperitivoabordo_ita_.png">
+                        </picture>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <!--Footer -->
+    <footer class="backroud-footer">
+        <div class="container ">
+
+            <section class="row  text_footer">
+                <h5>Trovaci anche su </h5>
+                <ul class="d-flex justify-content-center">
+                    <li class="items_l"><a href="#"></a><i class="fa-brands fa-facebook-f"></i></li>
+                    <li class="items_l"><i class="fa-brands fa-square-instagram"></i></li>
+                    <li class="items_l"><i class="fa-brands fa-pinterest"></i></li>
+                    <li class="items_l"><i class="fa-brands fa-twitter"></i></li>
+                    <li class="items_l"><i class="fa-brands fa-youtube"></i></li>
+                </ul>
+            </section>
+
+
+        </div>
+    </footer>
+
+
+    <script src="file.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
