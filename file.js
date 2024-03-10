@@ -1,34 +1,24 @@
-/* programma dovrà chiedere all’utente il numero di chilometri che vuole percorrere e l’età del passeggero.
-Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
-il prezzo del biglietto è definito in base ai km (0.21 € al km)
-va applicato uno sconto del 20% per i minorenni
-va applicato uno sconto del 40% per gli over 65.
-Stampate il prezzo finale del biglietto nella console del browser in forma “umana” ovvero con massimo due cifre decimali, per indicare centesimi 
-sul prezzo (per questo sarà necessario cercare in documentazione come fare) */
-
-let kmClient = "";
-let clientAge = "";
+/*Dobbiamo prendere gli elementi nel form 
+ho preferito usare il form perchè per sperimentare ho deciso di lavorare su due pagine diverse "trasportando i dati da una pagina ll'altra*/
+/*Applicato una costente */
 const costToKm = 0.21;
+const pnr = Math.random().toString(16).slice(2).toUpperCase();
 
 
 
-/*calcolare il prezzo totale del viaggio, secondo queste regole:
-il prezzo del biglietto è definito in base ai km (0.21 € al km)*/
-
-function cacololatePrice(km, priceToKm) {
+function calcololatePrice(km, priceToKm) {
     const TotalPrice = km * priceToKm;
     return TotalPrice;
 };
 
-
-
-
-function calcolaSconto(price, age) {
-    if (age <= 18) {
+/*Calcolo lo sconto applicando delle condizioni se sono verificare allora verrà applicato uno sconto diverso
+ho scelto di verificare il value */
+function calcolaSconto(price, age, kmClient) {
+    if (age == "joung") {
         let totaleSconto = price * 0.2;
         let totalePrezzo = price - totaleSconto;
         return totalePrezzo.toFixed(2)
-    } else if (age >= 65) {
+    } else if (age == "senior") {
         let totaleSconto = price * 0.4;
         let totalePrezzo = price - totaleSconto;
         return totalePrezzo.toFixed(2)
@@ -38,28 +28,55 @@ function calcolaSconto(price, age) {
     }
 };
 
+/*applico al HTML in modo dinamico i tag necessari per stampare il biglietto */
 
-function insertIntoHTML(endPrice) {
-    let div = document.getElementById("divC");
-    div.value = `<p> ${endPrice}€</p>`;
-};
+function insertInHTMLSummary(id, parametro) {
+    const idHTML = document.getElementById(id);
+    idHTML.innerHTML = `<p> ${parametro}</p>`
 
-let button = document.getElementById("btn");
+}
+/*Ascoltiamo l'evento sul bottone e specifico che se i value sono vuoti o non selezionati bisogna non procedere verrà visualizzato un alert */
+function gestisciBottone() {
+    let button = document.getElementById("btn");
 
-button.addEventListener("click", (e) => {
-    kmClient = document.getElementById("textKm").value;
-    clientAge = document.getElementById("ageInput").value;
+    button.addEventListener("click", (e) => {
+        kmClient = document.getElementById("textKm").value;
+        let selectionElement = document.getElementById("inputGroupSelect01");
+        let elementOption = selectionElement.value;
 
-    if (kmClient == "" && clientAge == "") {
-        alert("non hai inserito nessun dato")
-    } else {
-        let priceE = cacololatePrice(kmClient, costToKm);
-        let fine = calcolaSconto(priceE, clientAge);
-        insertIntoHTML(fine)
-    }
+        if (kmClient == "" || elementOption == "seleziona") {
+            alert("non hai inserito nessun dato");
+            e.preventDefault();
 
-});
+        } else if (isNaN(kmClient)) {
+            alert("Non hai inserito un valore valido");
+            e.preventDefault();
+        }
+    });
+}
 
-/*Non èancora finito ho creato una pagina index.html che avrà un layaut dove si portranno inserire i dati
-successivamente al cerca si aprirà un'altra pagina che darà il totale del costo da pagare
-qindi il codice deve essere ancora modificato ed aggiustato sono a lavoro lo faccio appena possibile */
+/*dato che gestisco due pagine diverse la pagina (uno) di inserimento e l pagina (due) di esito ho preferito usare il form che in automatico invia i name sul htttp e da quello poi estrapolo i dati e stampo nella pagina due */
+function prendiDati() {
+    const url = new URL(location);
+    return {
+        kmClient: url.searchParams.get("textKm"),
+        clientAge: url.searchParams.get("selectB")
+    };
+}
+
+/*dato che vengono usati due file html diversi il codice js andrebbe scritto su due pagine diverse, perchè potrebbe andare in contrasto in quanto delle funzionalità presenti sulla pagina uno non ci sono in pagina due e viceversa, per ovviare ho messo tutto in funzioni e le invoco all'occorrenza.*/
+function gestisciRisposta() {
+    const dati = prendiDati();
+    let priceE = calcololatePrice(dati.kmClient, costToKm);
+    let fine = calcolaSconto(priceE, dati.clientAge, dati.kmClient);
+    insertInHTMLSummary("pnr", pnr);
+    insertInHTMLSummary("divC", fine);
+    insertInHTMLSummary("ageSummary", dati.clientAge);
+    insertInHTMLSummary("kmSummary", dati.kmClient);
+}
+
+/*Dopo aver inserito i dati chiedo che vengano cancellati i dati nel input */
+window.addEventListener("load", (e) => {
+    document.getElementById("textKm").value = "";
+
+})

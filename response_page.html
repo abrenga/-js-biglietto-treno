@@ -20,31 +20,41 @@
                 <div class="container-fluid">
                     <a class="navbar-brand" href="index.html"><img class="logo" src="./img/logo.svg" alt=""></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        data-bs-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+            </nav>
+        </header>
     </div>
-    </nav>
-    </header>
 
     <main class="backroudColor2 p-5">
         <div class="container myContainer2 p-5">
-            <div class="row justify-content-center align-items-center divC">
-                <h3>Totale per il tuo Viaggio:</h3>
-                <div id="" class="divC">
+            <div class="row justify-content-center align-items-center">
+                <div class="row m-3">
+                    <h3 class="mb-3 col-lg-1">PNR:</h3>
+                    <div class="p-2 col-lg-10" id="pnr"></div>
                 </div>
-
-
+                <div class=" col-lg-6">
+                    <h5>Km da percorrere:</h5>
+                    <div id="kmSummary">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="mb-3 col-lg-1">Tariffa:</h5>
+                    <div class=" col-lg-10" id="ageSummary">
+                    </div>
+                </div>
             </div>
-
+            <div class="column mt-5 ">
+                <h3 class="mb-3 col-lg-2">Totale €</h3>
+                <div class="p-2 col-lg-9" id="divC">
+                </div>
+            </div>
         </div>
-
     </main>
     <footer class="backroud-footer">
         <div class="container ">
-
             <section class="row  text_footer">
                 <h5>Trovaci anche su </h5>
                 <ul class="d-flex justify-content-center">
@@ -55,13 +65,16 @@
                     <li class="items_l"><i class="fa-brands fa-youtube"></i></li>
                 </ul>
             </section>
-
-
         </div>
     </footer>
-    </div>
 
     <script src="file.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script>gestisciRisposta()</script>
+
 </body>
 
 </html>
